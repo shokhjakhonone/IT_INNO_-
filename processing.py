@@ -187,20 +187,17 @@ def evaluate_model(features_df):
     print("Оценка модели завершена.")
     return final_df
 
-def run_all():
-    download_and_extract()
-    dataset1, dataset2, dataset3 = load_datasets()
-    dataset1, dataset2, dataset3 = preprocess_datasets(dataset1, dataset2, dataset3)
-    features_df = compute_features(dataset1, dataset2, dataset3)
-    matches = find_matches(features_df)
-    final_df = process_matches(matches, dataset1, dataset2, dataset3)
-    evaluated_df = evaluate_model(features_df)
+#def run_all():
+download_and_extract()
+dataset1, dataset2, dataset3 = load_datasets()
+dataset1, dataset2, dataset3 = preprocess_datasets(dataset1, dataset2, dataset3)
+features_df = compute_features(dataset1, dataset2, dataset3)
+matches = find_matches(features_df)
+final_df = process_matches(matches, dataset1, dataset2, dataset3)
+evaluated_df = evaluate_model(features_df)
 
-    # Сохранение результатов
-    final_df.to_csv('final_records.csv', index=False)
-    evaluated_df.to_csv('evaluated_features.csv', index=False)
-    print("Результаты сохранены.")
-    return {
-        "final_records": final_df.to_dict(orient="records"),
-        "evaluated_features": evaluated_df.to_dict(orient="records")
-    }
+# Сохранение результатов
+final_df.to_csv('final_records.csv', index=False)
+evaluated_df.to_csv('evaluated_features.csv', index=False)
+print("Результаты сохранены.")
+    
