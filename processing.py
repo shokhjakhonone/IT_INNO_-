@@ -35,9 +35,9 @@ def download_and_extract():
 
 def load_datasets():
     print("Загрузка датасетов...")
-    dataset1 = pd.read_csv("data/public/main1.csv", nrows=30)
-    dataset2 = pd.read_csv("data/public/main2.csv", nrows=30)
-    dataset3 = pd.read_csv("data/public/main3.csv", nrows=30)
+    dataset1 = pd.read_csv("data/public/main1.csv", nrows=30, encoding='UTF-8')
+    dataset2 = pd.read_csv("data/public/main2.csv", nrows=30, encoding='UTF-8')
+    dataset3 = pd.read_csv("data/public/main3.csv", nrows=30, encoding='UTF-8')
     print("Загрузка завершена.")
     return dataset1, dataset2, dataset3
 
